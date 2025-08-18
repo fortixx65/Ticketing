@@ -15,7 +15,10 @@ use App\Models\Roles;
 class ClientsController extends Controller
 {
     public function index () {
+        $tickets = Ticket_Tickets::where('user_id', Auth::id())->get();
+
         return view('tickets.clients.index', [
+            'tickets' => $tickets,
         ]);
     }
 }
