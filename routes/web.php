@@ -5,7 +5,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Tickets\ClientsController;
 use App\Http\Controllers\Tickets\SupportsController;
-use App\Http\Controllers\Tickets\DevsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,16 +22,16 @@ Route::get('/', [Controller::class, 'index'])->name('index');
 Route::prefix('tickets')->name('tickets.')->group(function() {
     Route::prefix('clients')->name('clients.')->group(function() {
         Route::get('/', [ClientsController::class, 'index'])->name('index');
-        Route::post('/create', [RolesController::class, 'create'])->name('create');
+        Route::post('/create', [ClientsController::class, 'create'])->name('create');
         Route::prefix('{id}')->group(function() {
-            Route::get('/', [RolesController::class, 'profil'])->name('profil');
-            Route::get('/permission', [RolesController::class, 'permission'])->name('permission');
-            Route::get('/security', [RolesController::class, 'security'])->name('security');
-            Route::get('/edit', [RolesController::class, 'edit'])->name('edit');
-            Route::post('/edit', [RolesController::class, 'editer'])->name('editer');
-            Route::get('/On', [RolesController::class, 'on'])->name('on');
-            Route::get('/Off', [RolesController::class, 'off'])->name('off');
-            Route::get('/delete', [RolesController::class, 'delete'])->name('delete');
+            Route::get('/', [ClientsController::class, 'profil'])->name('profil');
+            Route::get('/permission', [ClientsController::class, 'permission'])->name('permission');
+            Route::get('/security', [ClientsController::class, 'security'])->name('security');
+            Route::get('/edit', [ClientsController::class, 'edit'])->name('edit');
+            Route::post('/edit', [ClientsController::class, 'editer'])->name('editer');
+            Route::get('/On', [ClientsController::class, 'on'])->name('on');
+            Route::get('/Off', [ClientsController::class, 'off'])->name('off');
+            Route::get('/delete', [ClientsController::class, 'delete'])->name('delete');
         });
     });
 

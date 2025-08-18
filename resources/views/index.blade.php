@@ -18,6 +18,8 @@
                             <h1 class="display-5 mb-0">Se connecter</h1>
                             <div class="subheading-1 mb-5">to continue to app</div>
                         </div>
+                        <div class="text-center mb-5"><a class="small fw-500 text-decoration-none" href="{{ route("admin.projects.index")}}">Admin</a></div>
+                        <br>
                         <div class="text-center mb-5"><a class="small fw-500 text-decoration-none" href="{{ route("tickets.clients.index")}}">Clients</a></div>
                         <br>
                         <div class="text-center mb-5"><a class="small fw-500 text-decoration-none" href="{{ route("tickets.supports.index")}}">Supports</a></div>
