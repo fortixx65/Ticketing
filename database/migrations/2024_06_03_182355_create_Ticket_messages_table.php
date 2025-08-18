@@ -24,7 +24,7 @@ return new class extends Migration
         });
 
         Schema::table('ticket__messages', function (Blueprint $table) {
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete();
         });
 
         Schema::table('ticket__messages', function (Blueprint $table) {
